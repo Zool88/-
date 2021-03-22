@@ -1,0 +1,99 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int num1 = 0;
+        int num2 = 0;
+        int len1 = 0;
+        int rim1 = 0;
+        int rim2 = 0;
+        String operation = null;
+
+        System.out.println("Введите 1 для арабских цифр или 2 для римских ");
+        Scanner s = new Scanner(System.in);
+        len1 = s.nextInt();
+
+        if (len1 == 1) {
+            System.out.println("Вы переключились на арабский калькулятор");
+            System.out.println("Введите выражение в формате \"5 + 6\" далее нажмите ENTER для получения результата: ");
+            Scanner scanner = new Scanner(System.in);
+            num1 = scanner.nextInt();
+            operation = scanner.next();
+            num2 = scanner.nextInt();
+
+            if (num1 > 0 && num1 < 10) {
+                if (operation.equals("+"))
+                    System.out.println(num1 + num2);
+                else if (operation.equals("-"))
+                    System.out.println(num1 - num2);
+                else if (operation.equals("*"))
+                    System.out.println(num1 * num2);
+                else if (operation.equals("/"))
+                    System.out.println(num1 / num2);
+                else
+                    System.out.println("Ошибка: не правильный символ операции");
+            } else
+                System.out.println("Ошибка: число должно быть в диапазоне >=1 и <10 ");
+        } else if (len1 == 2) {
+            System.out.println("Вы переключились на римский калькулятор");
+            System.out.println("Введите выражение в формате \"I + VI\" далее нажмите ENTER для получения результата: ");
+            Scanner scanner = new Scanner(System.in);
+            rim1 = scanner.nextInt();
+            operation = scanner.next();
+            rim2 = scanner.nextInt();
+
+
+            if (rim1 == 1)
+                System.out.print("I " + operation);
+            else if (rim1 == 2)
+                System.out.print("II " + operation);
+            else if (rim1 == 3)
+                System.out.print("III " + operation);
+            else if (rim1 == 4)
+                System.out.print("VI " + operation);
+            else if (rim1 == 5)
+                System.out.print("V " + operation);
+            else if (rim1 == 6)
+                System.out.print("VI " + operation);
+            else if (rim1 == 7)
+                System.out.print("VII " + operation);
+            else if (rim1 == 8)
+                System.out.print("VIII " + operation);
+            else if (rim1 == 9)
+                System.out.print("IX " + operation);
+            if (rim2 == 1)
+                System.out.println(" I ");
+            else if (rim2 == 2)
+                System.out.println(" II ");
+            else if (rim2 == 3)
+                System.out.println(" III ");
+            else if (rim2 == 4)
+                System.out.println(" VI ");
+            else if (rim2 == 5)
+                System.out.println(" V ");
+            else if (rim2 == 6)
+                System.out.println(" VI ");
+            else if (rim2 == 7)
+                System.out.println(" VII ");
+            else if (rim2 == 8)
+                System.out.println(" VIII ");
+            else if (rim2 == 9)
+                System.out.println(" IX ");
+
+            if (rim1 > 0 && rim1 < 10) {
+                if (operation.equals("+"))
+                    System.out.println(rim1 + rim2);
+                else if (operation.equals("-"))
+                    System.out.println(rim1 - rim2);
+                else if (operation.equals("*"))
+                    System.out.println(rim1 * rim2);
+                else if (operation.equals("/"))
+                    System.out.println(rim1 / rim2);
+                else
+                    System.out.println("Ошибка: не правильный символ операции");
+            } else
+                System.out.println("Ошибка: неправильное число , попробуй ещё");
+
+        }
+    }
+}
